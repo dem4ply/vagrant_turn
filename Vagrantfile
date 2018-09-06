@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
 		end
 		m.vm.provision :shell, path: REL_DIR + "/" + "provision/update_centos.sh"
 		m.vm.provision :shell, path: REL_DIR + "/" + "provision/install_elastic.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" + "provision/provision_elastic.sh"
 	end
 
 	config.vm.define 'postgres', primary: true do |m|

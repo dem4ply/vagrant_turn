@@ -1,0 +1,40 @@
+{
+	"index_patterns": ["*__turn_api__resource_event", "turn_api__resource_event"],
+	"settings": {
+		"number_of_replicas": 1,
+		"number_of_shards": 2
+	},
+	"mappings": {
+		"resource_event": {
+			"properties": {
+				"blueprint": { "type": "keyword" },
+				"client_ip": { "type": "ip" },
+				"content_length": { "type": "float" },
+				"content_type": { "type": "keyword" },
+				"continent": { "type": "keyword" },
+				"country": { "type": "keyword" },
+				"endpoint": { "type": "keyword" },
+				"full_url": { "type": "keyword" },
+				"host": { "type": "keyword" },
+				"host_url": { "type": "keyword" },
+				"location": { "type": "geo_point" },
+				"method": { "type": "keyword" },
+				"object_uuid": { "type": "keyword" },
+				"remote_user": { "type": "text" },
+				"request_args": { "dynamic": true, "type": "object" },
+				"request_id": { "type": "keyword" },
+				"response_code": { "type": "integer" },
+				"timestamp": { "type": "date" },
+				"timezone": { "type": "keyword" },
+				"timing": { "type": "float" },
+				"url": { "type": "keyword" },
+				"user": { "type": "keyword" },
+				"user_agent": { "type": "keyword" },
+				"user_model_id": { "type": "keyword" },
+				"user_model_type": { "type": "keyword" }
+			}
+		}
+	}
+}
+
+
