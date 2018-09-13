@@ -1,0 +1,73 @@
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "keyword"
+        },
+        "start_trial": {
+          "type": "date"
+        },
+        "end_trial": {
+          "type": "date"
+        },
+        "trial_limit": {
+          "type": "integer"
+        },
+        "is_trial": {
+          "type": "boolean"
+        },
+        "webhook_url": {
+          "analyzer": "person_name",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          },
+          "type": "text"
+        },
+        "name": {
+          "analyzer": "person_name",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          },
+          "type": "text"
+        }
+      }
+    }
+  },
+  "index_patterns": [
+    "*__turn_api__partner_worker"
+  ],
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "person_name": {
+          "tokenizer": "trigram",
+          "filter": [
+            "standard",
+            "lowercase",
+            "asciifolding",
+            "stop",
+            "snowball"
+          ],
+          "type": "custom"
+        }
+      },
+      "tokenizer": {
+        "trigram": {
+          "min_gram": 3,
+          "max_gram": 5,
+          "type": "nGram"
+        }
+      }
+    }
+  }
+}
+
+
