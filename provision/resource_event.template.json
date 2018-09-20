@@ -5,7 +5,7 @@
 		"number_of_shards": 2
 	},
 	"mappings": {
-		"resource_event": {
+		"doc": {
 			"properties": {
 				"blueprint": { "type": "keyword" },
 				"client_ip": { "type": "ip" },
