@@ -7,7 +7,7 @@ then
 	java -version 2>&1 >/dev/null | ponysay
 	rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 	yum install -y elasticsearch
-	sudo cp -v $FOLDER_PROVISION/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
+	cp -v $FOLDER_PROVISION/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 	chown elasticsearch:elasticsearch /etc/elasticsearch/elasticsearch.yml
 	systemctl enable elasticsearch.service
 	systemctl start elasticsearch.service

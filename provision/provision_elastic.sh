@@ -24,3 +24,11 @@ curl -v localhost:9200/_template/turn_api__resource_event -XPUT \
 curl -v localhost:9200/_template/turn_api__partner -XPUT \
 	-d@"$FOLDER_PROVISION/partner.template.json" \
 	-H 'content-type: application/json' 2> /dev/null
+
+curl -v localhost:9200/_template/turn_api__county -XPUT \
+	-d@"$FOLDER_PROVISION/county.template.json" \
+	-H 'content-type: application/json' 2> /dev/null
+
+curl -v localhost:9200/_template/turn_api__state -XPUT \
+	-d@"$FOLDER_PROVISION/state.template.json" \
+	-H 'content-type: application/json' 2> /dev/null
