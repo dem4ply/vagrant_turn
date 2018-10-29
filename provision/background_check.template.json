@@ -1,0 +1,65 @@
+{
+  "index_patterns": [
+    "*__turn_api__background_check"
+  ],
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1,
+    "analysis": {
+      "analyzer": {
+        "person_name": {
+          "tokenizer": "trigram",
+          "filter": [
+            "standard",
+            "lowercase",
+            "asciifolding",
+            "stop",
+            "snowball"
+          ],
+          "type": "custom"
+        }
+      },
+      "tokenizer": {
+        "trigram": {
+          "min_gram": 3,
+          "max_gram": 5,
+          "type": "nGram"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "completed_at": {
+          "type": "date"
+        },
+        "created_at": {
+          "type": "date"
+        },
+        "kind": {
+          "type": "keyword"
+        },
+        "origin": {
+          "type": "keyword"
+        },
+        "partner_worker_id": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "keyword"
+        },
+        "locality": {
+          "analyzer": "person_name",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          },
+          "type": "text"
+        }
+      }
+    }
+  }
+  
+}

@@ -32,3 +32,7 @@ curl -v localhost:9200/_template/turn_api__county -XPUT \
 curl -v localhost:9200/_template/turn_api__state -XPUT \
 	-d@"$FOLDER_PROVISION/state.template.json" \
 	-H 'content-type: application/json' 2> /dev/null
+
+curl -v localhost:9200/_template/turn_api__background_checks -XPUT \
+	-d@"$FOLDER_PROVISION/background_check.template.json" \
+	-H 'content-type: application/json' 2> /dev/null
