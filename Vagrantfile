@@ -21,26 +21,83 @@ Vagrant.configure("2") do |config|
 		m.vm.host_name = "elastic"
 		# if you have a host only network set the ip
 		#config.vm.network "private_network", ip: "192.168.56.99"
-		config.vm.network "forwarded_port", guest: 9200, host: 9200
+		m.vm.network "forwarded_port", guest: 9200, host: 9200
 		m.vm.provider "virtualbox" do |vb|
 			vb.name = "elastic"
-			vb.memory = 1024
+			vb.memory = 512
 			vb.cpus = 1
 		end
-		m.vm.provision :shell, path: REL_DIR + "/" + "provision/update_centos.sh"
-		m.vm.provision :shell, path: REL_DIR + "/" + "provision/install_elastic.sh"
-		m.vm.provision :shell, path: REL_DIR + "/" + "provision/provision_elastic.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/install_python.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_cowsay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/repos/cp_all_repos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/update_centos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_essential.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_ponysay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_java.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/elasticsearch/install.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/elasticsearch/config.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/elasticsearch/provision.py"
 	end
 
 	config.vm.define 'postgres', primary: true do |m|
 		m.vm.host_name = "postgres"
-		config.vm.network "forwarded_port", guest: 5432, host: 5432
+		m.vm.network "forwarded_port", guest: 5432, host: 5432
 		m.vm.provider "virtualbox" do |vb|
 			vb.name = "postgres"
 			vb.memory = 512
 			vb.cpus = 1
 		end
-		m.vm.provision :shell, path: REL_DIR + "/" + "provision/update_centos.sh"
-		m.vm.provision :shell, path: REL_DIR + "/" + "provision/install_prostgresql.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/install_python.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_cowsay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/repos/cp_all_repos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/update_centos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_essential.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_ponysay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/postgresql/install.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/postgresql/provision.py"
+	end
+
+	config.vm.define 'redis', primary: true do |m|
+		m.vm.host_name = "postgres"
+		m.vm.network "forwarded_port", guest: 6379, host: 6379
+		m.vm.provider "virtualbox" do |vb|
+			vb.name = "redis"
+			vb.memory = 512
+			vb.cpus = 1
+		end
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/install_python.sh"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_cowsay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/repos/cp_all_repos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/update_centos.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_essential.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/stuff/install_ponysay.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/redis/install.py"
+		m.vm.provision :shell, path: REL_DIR + "/" +
+			"provision/redis/provision.py"
 	end
 end
