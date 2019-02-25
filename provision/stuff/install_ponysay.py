@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-from chibi.command import echo, yum
-from chibi.file import inflate_dir, Chibi_file, join, exists, current_dir, cd
-from chibi.net import download
+from chibi.command import yum, git, command
 from chibi.command.echo import cowsay
-from chibi.command import git, pip
-from chibi.command import command
+from chibi.file import Chibi_file
+from chibi.file.snippets import inflate_dir, join, exists, current_dir, cd
 
 
 cache_dir = inflate_dir( '~/.cache' )

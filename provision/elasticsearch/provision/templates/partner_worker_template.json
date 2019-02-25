@@ -59,6 +59,9 @@
         "uuid": {
           "type": "keyword"
         },
+        "turn_id": {
+          "type": "keyword"
+        },
         "create_at": {
           "type": "date"
         }
@@ -82,9 +85,13 @@
       },
       "tokenizer": {
         "trigram": {
-          "min_gram": 3,
-          "max_gram": 5,
-          "type": "nGram"
+          "min_gram": 4,
+          "max_gram": 4,
+          "type": "nGram",
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
         }
       }
     }

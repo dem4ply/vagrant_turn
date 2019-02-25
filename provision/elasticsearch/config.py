@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from chibi.command import systemctl
 from chibi.command.echo import cowsay
-from chibi.file import join, chown, copy
+from chibi.file.snippets import join, copy, chown
 
 
 FOLDER_PROVISION="/home/vagrant/provision/elasticsearch/provision"

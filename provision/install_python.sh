@@ -25,3 +25,5 @@ then
 	echo "Finish installing python"
 	echo "========================"
 fi
+
+pip3.6 install --upgrade chibi
