@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from chibi.command import systemctl
 from chibi.command.echo import cowsay
-from chibi.file.snippets import join
+from chibi.file.snippets import join, copy
 
 
 FOLDER_PROVISION="/home/vagrant/provision/redis/provision"
