@@ -1,0 +1,34 @@
+{
+    "order": 0,
+    "index_patterns": [
+      "*__laniidae__sub_profiles_history"
+    ],
+    "settings": {
+      "index": {
+        "number_of_shards": "2",
+        "number_of_replicas": "1"
+      }
+    },
+    "mappings": {
+      "doc": {
+        "properties": {
+          "sub_profile_id": {
+            "type": "keyword"
+          },
+          "raw_yaml": {
+            "type": "keyword"
+          },
+          "parse_yaml": {
+            "type": "keyword"
+          },
+          "error_data": {
+            "dynamic": true,
+            "type": "object"
+          }
+        },
+        "date_detection": false,
+        "numeric_detection": false
+      }
+    },
+    "aliases": {}
+}

@@ -1,0 +1,61 @@
+{
+    "order": 0,
+    "index_patterns": [
+      "*__turn_api__placement"
+    ],
+    "settings": {
+      "index": {
+        "analysis": {
+          "analyzer": {
+            "insensitive": {
+              "filter": [
+                "lowercase",
+                "asciifolding"
+              ],
+              "type": "custom",
+              "tokenizer": "keyword"
+            }
+          }
+        },
+        "number_of_shards": "2",
+        "number_of_replicas": "1"
+      }
+    },
+    "mappings": {
+      "doc": {
+        "properties": {
+          "partner": {
+            "properties": {
+              "name": {
+                "fields": {
+                  "raw": {
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "pk": {
+                "type": "integer"
+              },
+              "type": {
+                "type": "keyword"
+              }
+            },
+            "type": "object"
+          },
+          "location": {
+            "type": "geo_shape"
+          },
+          "interests": {
+            "analyzer": "insensitive",
+            "type": "text"
+          },
+          "transports": {
+            "analyzer": "insensitive",
+            "type": "text"
+          }
+        }
+      }
+    },
+    "aliases": {}
+}

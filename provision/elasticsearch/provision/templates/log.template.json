@@ -1,7 +1,8 @@
 {
 	"index_patterns" : [
 		"turn_api__logstash-*", "*__turn_api__logstash-*",
-		"turn_api__logs-*", "*__turn_api__logs-*"
+		"turn_api__logs-*", "*__turn_api__logs-*",
+		"*__logs-*"
 	],
 	"version" : 60001,
 	"settings" : {
