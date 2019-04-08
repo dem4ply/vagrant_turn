@@ -44,7 +44,8 @@
             "type": "object"
           },
           "location": {
-            "type": "geo_shape"
+            "type": "geo_shape",
+            "strategy" : "recursive"
           },
           "interests": {
             "analyzer": "insensitive",
