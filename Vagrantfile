@@ -14,7 +14,7 @@ BACKUPS_SHARE_FOLDER = "/home/vagrant/backups"
 Vagrant.configure("2") do |config|
 	config.vm.synced_folder HOST_BACKUPS_SHARE_FOLDER, BACKUPS_SHARE_FOLDER, owner: "vagrant", group: "vagrant", create: true
 	config.vm.synced_folder HOST_SHARE_FOLDER, GUEST_SHARE_FOLDER, owner: "vagrant", group: "vagrant", create: true
-	config.vm.synced_folder 'provision', GUEST_SHARE_FOLDER_PROVISION, owner: "vagrant", group: "vagrant", create: true
+	config.vm.synced_folder 'provision/', GUEST_SHARE_FOLDER_PROVISION, owner: "vagrant", group: "vagrant", create: true
 	config.vm.box = "geerlingguy/centos7"
 
 	config.vm.define 'elastic', primary: true do |m|

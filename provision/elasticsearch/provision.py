@@ -9,6 +9,7 @@ from chibi.file.snippets import join
 
 FOLDER_PROVISION="/home/vagrant/provision/elasticsearch/provision/templates"
 url = 'http://localhost:9200'
+headers = {'Content-type': 'application/json'}
 
 while True:
     status = (
@@ -34,64 +35,64 @@ f = Chibi_file( join( FOLDER_PROVISION, "resource_event.template.json" ) )
 j = f.read_json()
 r = requests.put(
     "{}/_template/turn_api__api_event".format( url ),
-    data=j )
+    json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "background_check.template.json" ) )
 j = f.read_json()
 r = requests.put(
     "{}/_template/turn_api__background_checks".format( url ),
-    data=j )
+    json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "county.template.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/turn_api__county".format( url ), data=j )
+    "{}/_template/turn_api__county".format( url ), json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "log.template.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/turn_api__logs".format( url ), data=j )
+    "{}/_template/turn_api__logs".format( url ), json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "partner_worker_template.json" ) )
 j = f.read_json()
 r = requests.put(
     "{}/_template/turn_api__partner_worker".format( url ),
-    data=j )
+    json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "resource_event.template.json" ) )
 j = f.read_json()
 r = requests.put(
     "{}/_template/turn_api__resource_event".format( url ),
-    data=j )
+    json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "state.template.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/turn_api__state".format( url ), data=j )
+    "{}/_template/turn_api__state".format( url ), json=j, headers=headers )
 print( r.text )
 
 
 f = Chibi_file( join( FOLDER_PROVISION, "laniidae_profiles.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/laniidae_profile_data".format( url ), data=j )
+    "{}/_template/laniidae_profile_json".format( url ), json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "laniidae_sub_profiles.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/laniidae_sub_profile_data".format( url ), data=j )
+    "{}/_template/laniidae_sub_profile_json".format( url ), json=j, headers=headers )
 print( r.text )
 
 
 f = Chibi_file( join( FOLDER_PROVISION, "placement.template.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/turn_api__placement".format( url ), data=j )
+    "{}/_template/turn_api__placement".format( url ), json=j, headers=headers )
 print( r.text )
