@@ -13,7 +13,10 @@
       "doc": {
         "properties": {
           "detail_yaml": {
-            "type": "keyword"
+            "type": "keyword",
+            "index": false,
+            "ignore_above": 512,
+            "doc_values": false
           }
         },
         "date_detection": false,

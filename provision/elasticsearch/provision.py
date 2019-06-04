@@ -81,13 +81,20 @@ print( r.text )
 f = Chibi_file( join( FOLDER_PROVISION, "laniidae_profiles.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/laniidae_profile_json".format( url ), json=j, headers=headers )
+    "{}/_template/laniidae_profile_data".format( url ), json=j, headers=headers )
 print( r.text )
 
 f = Chibi_file( join( FOLDER_PROVISION, "laniidae_sub_profiles.json" ) )
 j = f.read_json()
 r = requests.put(
-    "{}/_template/laniidae_sub_profile_json".format( url ), json=j, headers=headers )
+    "{}/_template/laniidae_sub_profile_data".format( url ), json=j, headers=headers )
+print( r.text )
+
+
+f = Chibi_file( join( FOLDER_PROVISION, "laniidae_sub_profiles_history.template.json" ) )
+j = f.read_json()
+r = requests.put(
+    "{}/_template/laniidae_sub_profile_history".format( url ), json=j, headers=headers )
 print( r.text )
 
 

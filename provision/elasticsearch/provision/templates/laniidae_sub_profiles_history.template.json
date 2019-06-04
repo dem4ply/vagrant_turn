@@ -16,10 +16,16 @@
             "type": "keyword"
           },
           "raw_yaml": {
-            "type": "keyword"
+            "type": "keyword",
+            "index": false,
+            "ignore_above": 512,
+            "doc_values": false
           },
           "parse_yaml": {
-            "type": "keyword"
+            "type": "keyword",
+            "index": false,
+            "ignore_above": 512,
+            "doc_values": false
           },
           "error_data": {
             "dynamic": true,
