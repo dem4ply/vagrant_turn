@@ -16,8 +16,9 @@ if __name__ == "__main__" and not version_to_check in file_check:
     cowsay( "install postgresql" )
 
     yum.install(
-        "https://download.postgresql.org/pub/repos/yum/9.6/"
-        "redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm" )
+        "https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm")
+        #"https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm" )
+
 
     yum.install(
         'postgresql96', 'postgresql96-server', 'postgresql96-libs',
