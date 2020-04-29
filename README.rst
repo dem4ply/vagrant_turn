@@ -16,14 +16,14 @@ and `virtualbox <https://www.virtualbox.org/>`_
 How to use
 ==========
 
-The initial configuration of the virtual machine that we are going to create will be defined in the Vagrantfile file of this repository. For start the virtual machine you put in the root of the repository and execute the command:
+The initial configuration of the virtual machine that we are going to create will be defined in the Vagrantfile file of this repository. To start the virtual machine run this command in the root of the repository:
 
 .. code-block:: bash
 
 	vagrant up 
 ...
 
-Or you can install element by the element with the next commands:
+Or you can install element by element with the next commands:
 
 .. code-block:: bash
 
@@ -33,14 +33,14 @@ Or you can install element by the element with the next commands:
 
 ... 
 
-And you going to have a new virtual machine provide with all nesesary for use
-elastic, postgres and redis without production settings
+And you're going to have a new virtual machine provided with everything you need for
+elastic, postgres and redis without production settings.
 
 ==========
 Testing
 ==========
 
-For tests is running you can use
+To test your machine is running properly you can use:
 
 - Elastic
 .. code-block:: bash
