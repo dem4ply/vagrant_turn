@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
 	end
 
 	config.vm.define 'redis', primary: true do |m|
-		m.vm.host_name = "postgres"
+		m.vm.host_name = "redis"
 		m.vm.network "forwarded_port", guest: 6379, host: 6379
 		m.vm.provider "virtualbox" do |vb|
 			vb.name = "redis"
